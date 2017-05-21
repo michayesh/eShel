@@ -1,0 +1,22 @@
+PPA
+ini2struct
+readeshel(f_list(filenum).name)
+read_pcalib(f_list(filenum).name);
+    fitsread_binary_benny(fn,'BinTable',1);
+    
+clean_norm(rspect,5,0.7,'simple-robust');
+    quantfilt(paddata,margin,quantval,margin)
+    quantfiltdiff(paddata,filterwid,quantval);
+PPB
+ini2struct(ini_fn)
+juliandate(now);
+concat_orders( spect );get_arr_kwd(keywords,'MJD-OBS')
+calc_obs_dat(Keywords,false,obs_data.RA,obs_data.DEC);
+    get_arr_kwd(keywords,'MJD-OBS')
+    DEC2rad(DEC);
+    RA2rad(RA);
+    horiz_coo([ra_rad dec_rad],obs_dat.JD,[site_lon_rad site_lat_rad],'h'); % Eran Ofek
+    hardie(pi./2 - obs_dat.HorCoo(:,2)); % Eran Ofek
+unicor(input_struct);
+meridian_calc(RA,time_zone,night_length, 'Wise');
+    observatory_coo(obs_name); % eran ofek
